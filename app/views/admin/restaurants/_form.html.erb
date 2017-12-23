@@ -17,6 +17,11 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
+      <duv class="form-group">
+        <%= f.label :category_id, "Category" %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: "form-control"} %>
+      </duv>
+
       <div class="form-group">
         <%= f.label :tel, "Tel" %>
         <%= f.text_field :tel, class: "form-control" %>
