@@ -26,7 +26,7 @@
           <tr>
             <th scope="row"><%= restaurant.id %></th>
             <td><%= restaurant.name %></td>
-            <td>[<%= restaurant.category.name %>]</td>
+            <td><% if restaurant.category == nil %><%= nil %><% else %><%= restaurant.category.name %><% end %></td>
             <td>
               <%= link_to 'Show', admin_restaurant_path(restaurant) %>
               <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %>
