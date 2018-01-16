@@ -1,3 +1,4 @@
+  <div class="container">
     <% @restaurants.each do |restaurant| %>
       <div class="col-sm-6 col-md-4">
         <div class="restaurant-item">
@@ -10,6 +11,7 @@
         </div>
       </div>
     <% end %>
+  </div>
 
     <div class="text-center">
       <%= paginate @restaurants %>
