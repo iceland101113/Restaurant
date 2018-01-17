@@ -22,3 +22,21 @@
   float: none;
   display: inline-block;
 }
+
+.my-restaurant{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  float: left;
+  width: 200px;
+
+}
+
+.my-restaurant img {
+  max-height: 180px;
+  width: 100%;
+  border-radius: 10px;
+
+}
