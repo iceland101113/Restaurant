@@ -21,6 +21,8 @@
       <%= simple_format @restaurant.description %>
     </div>
 
+    <%= link_to 'Dashboard', dashboard_restaurant_path(@restaurant), class: "btn btn-primary" %>
+
     <div class="clearfix"></div>
 
     <!-- 顯示與餐廳相關的評論 -->
