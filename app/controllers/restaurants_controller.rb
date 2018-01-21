@@ -45,6 +45,17 @@ class RestaurantsController < ApplicationController
     likes = Like.where(restaurant: @restaurant, user: current_user)
     likes.destroy_all
     redirect_back(fallback_location: root_path)
-  end    
+  end   
+
+  def ranking
+    @restaurants = Restaurant.all
+    @restaurants.each do |restaurant|
+      @count= Favorite.where(restaurant_id: restaurant.id).count
+      restaurant.update_column(:favorite_count, @count)
+    end
+    @rank_restaurants = Restaurant.order(favorite_count: :desc).limit(10)
+
+  end
+
 
 end
