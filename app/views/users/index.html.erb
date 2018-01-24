@@ -1,12 +1,34 @@
-<ul>
+<div class="container">
+  <div class="row">
 
-  <% @users.each do |user| %>
-    <li>
-      <%= user.name %>
+    <ul class="nav nav-tabs">
+      <li role="presentation"><%= link_to "首頁", root_path %></li>
+      <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li>
+      <li role="presentation"><%= link_to "Top 10 人氣餐廳", ranking_restaurants_path %></li>
+      <li role="presentation" class="active"><%= link_to "美食達人", users_path %></li>
+    </ul>
+    <br>
 
-      <%= render partial: "shared/follow", locals: {user: user} %>
+    <h2>美食達人</h2>
+    <hr>
 
-    </li>
-  <% end %>
+    <div class="container">
+      <% @users.each do |user| %>
+        <div class="col-sm-6 col-md-3">
+          <div class="food">
+            <%= image_tag 'https://static.turbosquid.com/Preview/2014/12/26__12_10_53/TurboSignature.jpgc1c22c64-7b09-433c-a12f-54b3d51399b3Original.jpg', class: "img-responsive center-block" %>
+            <% if user.name == nil %>
+              <%= user.id %>號使用者
+            <% else %>
+              <%= user.name %>
+            <% end %>
+            <br>
+            <%= render partial: "shared/follow", locals: {user: user} %>
+            <br>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-</ul>
+  </div>
+</div>
