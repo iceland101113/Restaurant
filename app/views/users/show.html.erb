@@ -23,10 +23,10 @@
         <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
       </div>
   </div>
-</div>  
+ 
 <br>
-<div class="container">
   <div class="row">
+    <div col-xs-12 col-md-6>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">評價 <%= @commented_restaurants_number%> 間餐廳</h3>
@@ -40,5 +40,48 @@
           <% end %>
         </div>
       </div>
-  </div>
-</div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">收藏 <%= @favorite_restaurants_nd%> 間餐廳</h3>
+        </div>
+        <div class="panel-body">
+          <% @favorite_restaurants.each do |restaurant| %>           
+              <div class="my-restaurant">
+                <%= image_tag restaurant.image, class: "img-responsive center-block" %>
+                <h5><%= link_to restaurant.name, restaurant_path(restaurant) %></h5>
+              </div> 
+          <% end %>
+        </div>
+      </div>
+    </div>
+     <div col-xs-12 col-md-6>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> 你追蹤<%= @followings_nd%> 人</h3>
+        </div>
+        <div class="panel-body">
+          <% @followings.each do |user| %>           
+              <div class="my-restaurant">
+                <%= image_tag user.avatar, class: "img-responsive center-block" %>
+                <h5><%=user.name%></h5>
+              </div> 
+          <% end %>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"> <%= @followers_nd%> 個追蹤者</h3>
+        </div>
+        <div class="panel-body">
+          <% @followers.each do |user| %>           
+              <div class="my-restaurant">
+                <%= image_tag user.avatar, class: "img-responsive center-block" %>
+                <h5><%=user.name%></h5>
+              </div> 
+          <% end %>
+        </div>
+      </div>
+    </div> 
+  </div>  
+</div> 
+
