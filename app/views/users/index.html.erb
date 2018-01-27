@@ -24,9 +24,7 @@
             <% end %>
             <br>
             <%= render partial: "shared/follow", locals: {user: user} %>
-            <br>
-            <%= link_to 'Friend', friendships_path(friend_id: user), method: :post %>
-            <%= link_to 'Unfriend', friendship_path(user), method: :delete %>
+            <%= render partial: "shared/friend", locals: {user: user} %>
             <br>
           </div>
         </div>
