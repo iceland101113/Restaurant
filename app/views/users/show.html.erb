@@ -15,6 +15,9 @@
         <% end %>
         <h3><%= @user.email %></h3>
         <hr>
+
+        <p>已評論<%=@commented_restaurants_number%>間餐聽，收藏 <%= @favorite_restaurants_nd%> 間餐廳，追蹤<%= @followings_nd%> 人，<%= @followers_nd%> 個追蹤者。</p>
+
         <% if @user.intro == nil %>
           <h3>未新增自我介紹</h3>
         <% else %>
@@ -25,8 +28,9 @@
   </div>
  
 <br>
+<div class="container">
   <div class="row">
-    <div col-xs-12 col-md-6>
+
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">評價 <%= @commented_restaurants_number%> 間餐廳</h3>
@@ -53,11 +57,11 @@
           <% end %>
         </div>
       </div>
-    </div>
-     <div col-xs-12 col-md-6>
+
+     
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"> 你追蹤<%= @followings_nd%> 人</h3>
+          <h3 class="panel-title"> 追蹤<%= @followings_nd%> 人</h3>
         </div>
         <div class="panel-body">
           <% @followings.each do |user| %>           
@@ -81,7 +85,8 @@
           <% end %>
         </div>
       </div>
-    </div> 
+   
   </div>  
 </div> 
+
 
