@@ -24,6 +24,7 @@
           <h3><%= @user.intro %></h3>   
         <% end %>
         <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+        <%= link_to 'My Friends', friend_list_user_path(@user), class: "btn btn-primary" %>
       </div>
   </div>
  

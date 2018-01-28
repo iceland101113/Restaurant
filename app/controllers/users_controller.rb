@@ -23,6 +23,13 @@ class UsersController < ApplicationController
 
   end
 
+  def friend_list
+    @users = User.all
+    @user = current_user
+    @all_friends = @user.friends.all.ids + @user.friendss.all.ids
+    @all_friends_q = @all_friends.uniq
+  end
+
   def edit
     @user = current_user
   end
