@@ -18,5 +18,8 @@
 ## 撰寫方式
 ruby on rails, html, css
 
+## 部署方式  
+已部署至heroku, 網址如下  
+https://dashboard.heroku.com/apps/my-restaurant-f
 
 
