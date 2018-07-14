@@ -6,11 +6,11 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @restaurant_a = Restaurant.all
-    @commented_restaurants = @user.restaurants
-    @commented_restaurants_nd = @commented_restaurants.ids.uniq
-
-    @commented_restaurants_number = @commented_restaurants.ids.uniq.length
+    # @restaurant_a = Restaurant.all
+    restaurants = @user.restaurants
+    commented_restaurants_nd = restaurants.ids.uniq
+    @commented_restaurants = Restaurant.find(commented_restaurants_nd)
+    @commented_restaurants_number = commented_restaurants_nd.length
 
     @favorite_restaurants = @user.favorited_restaurants
     @favorite_restaurants_nd = @user.favorited_restaurants.ids.length
@@ -24,10 +24,10 @@ class UsersController < ApplicationController
   end
 
   def friend_list
-    @users = User.all
-    @user = current_user
-    @all_friends = @user.friends.all.ids + @user.friendss.all.ids
-    @all_friends_q = @all_friends.uniq
+    user = current_user
+    all_friends = user.friends.all.ids + user.friendss.all.ids
+    all_friends_q = all_friends.uniq
+    @users = User.find(all_friends_q)
   end
 
   def edit

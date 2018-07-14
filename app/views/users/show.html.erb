@@ -37,10 +37,10 @@
           <h3 class="panel-title">評價 <%= @commented_restaurants_number%> 間餐廳</h3>
         </div>
         <div class="panel-body">
-          <% @commented_restaurants_nd.each do |restaurant| %>           
+          <% @commented_restaurants.each do |restaurant| %>           
               <div class="my-restaurant">
-                <%= image_tag @restaurant_a.find(restaurant).image, class: "img-responsive center-block" %>
-                <h5><%= link_to @restaurant_a.find(restaurant).name, restaurant_path(@restaurant_a.find(restaurant)) %></h5>
+                <%= image_tag restaurant.image, class: "img-responsive center-block" %>
+                <h5><%= link_to restaurant.name, restaurant_path(restaurant) %></h5>
               </div> 
           <% end %>
         </div>
