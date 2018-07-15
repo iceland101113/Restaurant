@@ -16,7 +16,7 @@
       <% @users.each do |user| %>
         <div class="col-sm-6 col-md-3">
           <div class="food">
-            <%= image_tag 'https://static.turbosquid.com/Preview/2014/12/26__12_10_53/TurboSignature.jpgc1c22c64-7b09-433c-a12f-54b3d51399b3Original.jpg', class: "img-responsive center-block" %>
+            <%= image_tag user.avatar, class: "img-responsive center-block" %>
             <% if user.name == nil %>
               <%= user.id %>號使用者
             <% else %>
