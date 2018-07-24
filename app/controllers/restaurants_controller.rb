@@ -51,5 +51,8 @@ class RestaurantsController < ApplicationController
     @rank_restaurants = Restaurant.includes(:category).order(favorite_count: :desc).limit(10)
   end
 
+  def about
+    @user_count = User.get_user_count
+  end
 
 end
